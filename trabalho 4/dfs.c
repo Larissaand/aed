@@ -53,7 +53,7 @@ void fullpath(grafo g, int i){
   int a;
   for (a=0; a<g->v; a++){
     vetor res = dfs(g, a);
-    printvet(res, k);
+    printvet(res, k+1);
     printf("\n");
   }
 }
