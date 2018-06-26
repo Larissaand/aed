@@ -10,6 +10,5 @@ void dfs_b(grafo g, int i);
 double timedfs(grafo g, int i);
 int conexo(grafo g, int i);
 void fullpath(grafo g, int i);
-int _subgrafos();
 
 #endif
