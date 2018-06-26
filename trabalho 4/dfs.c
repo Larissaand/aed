@@ -8,6 +8,11 @@ vetor v_res;
 int k;
 int sg;
 
+double secondsdfs(){
+  struct timespec now;
+  clock_gettime(CLOCK_MONOTONIC, &now);
+  return ((double) now.tv_sec * 1000000) + ((double)now.tv_nsec)/ 1000;
+}
 vetor dfs(grafo g,int i){
   int l;
   sg=0;
@@ -36,9 +41,9 @@ void dfs_b(grafo g, int i){
 }
 
 double timedfs(grafo g, int i){
-    double time1 = secondsvet();
+    double time1 = secondsdfs();
     vetor result = dfs(g,i);
-    double time2 = secondsvet();
+    double time2 = secondsdfs();
     double time_spent = (time2 - time1) / 1000;
 }
 
@@ -54,7 +59,7 @@ void fullpath(grafo g, int i){
   int a;
   for (a=0; a<g->v; a++){
     printvet(dfs(g,a),g->v);
-    print("\n");
+    printf("\n");
   }
 }
 
